@@ -15,10 +15,12 @@ public class Ads {
     private Long id;
     @ManyToOne
     private User author;
+    private String description;
     @OneToOne
     private ImageAds image;
     private Integer price;
     private String title;
     @OneToMany(mappedBy = "ads")
     private List<Comment> comments;
+
 }
