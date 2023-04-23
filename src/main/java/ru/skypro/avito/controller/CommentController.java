@@ -27,7 +27,7 @@ public class CommentController {
     @Operation(summary = "Добавить комментарий к объявлению")
     @PostMapping("/{adKey}/comments")
     public ResponseEntity<CommentDto> addComments(@PathVariable("adKey") Integer adKey,
-                                                     @RequestBody CommentDto commentDto) {
+                                                  @RequestBody CommentDto commentDto) {
         return ResponseEntity.ok(commentService.addComment(adKey, commentDto));
     }
 
@@ -41,8 +41,8 @@ public class CommentController {
     @Operation(summary = "Обновить комментарий")
     @PatchMapping("/{adKey}/comment/{id}")
     public ResponseEntity<CommentDto> updateComment(@PathVariable("adKey") Integer adKey,
-                                                       @PathVariable("id") Integer id,
-                                                       @RequestBody CommentDto updatedCommentDto) {
+                                                    @PathVariable("id") Integer id,
+                                                    @RequestBody CommentDto updatedCommentDto) {
         return ResponseEntity.ok(commentService.updateComment(adKey, id, updatedCommentDto));
     }
 }

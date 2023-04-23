@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.skypro.avito.dto.CommentDto;
-import ru.skypro.avito.mapper.CommentMapper;
 import ru.skypro.avito.model.Comment;
 import ru.skypro.avito.model.User;
 import ru.skypro.avito.repository.AdsRepository;
@@ -16,6 +15,7 @@ import java.time.Instant;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+import static ru.skypro.avito.mapper.CommentMapper.*;
 import static ru.skypro.avito.security.SecurityUtils.checkPermissionToAdsComment;
 
 @RequiredArgsConstructor
@@ -29,14 +29,14 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public CommentDto addComment(Integer adKey, CommentDto dto) {
-        Comment comment = CommentMapper.INSTANCE.toEntity(dto);
+        Comment comment = INSTANCE.toEntity(dto);
         User user = userService.findUserFromContext();
         comment.setAuthor(user);
         comment.setAds(adsRepository.findById(adKey).orElseThrow());
         comment.setCreatedAt(Instant.now());
         commentRepository.save(comment);
         log.info("Comment with ads id {} was added ", adKey);
-        return CommentMapper.INSTANCE.toDto(comment);
+        return INSTANCE.toDto(comment);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class CommentServiceImpl implements CommentService {
         log.info("Found all comments with ads id {} ", adKey);
         return commentRepository.findAllByAdsId(adKey)
                 .stream()
-                .map(CommentMapper.INSTANCE::toDto)
+                .map(INSTANCE::toDto)
                 .collect(Collectors.toList());
     }
 
@@ -61,6 +61,6 @@ public class CommentServiceImpl implements CommentService {
         checkPermissionToAdsComment(comment);
         comment.setText(updateComment.getText());
         log.info("Comment with id {} was updated ", id);
-        return CommentMapper.INSTANCE.toDto(commentRepository.save(comment));
+        return INSTANCE.toDto(commentRepository.save(comment));
     }
 }
