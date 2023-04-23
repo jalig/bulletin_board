@@ -21,7 +21,7 @@ public class SecurityUtils {
         MyUserDetails userDetails = getUserDetailsFromContext();
 
         if (userDetails.getId() != ads.getAuthor().getId()) {
-            throw new AccessDeniedException("Чтобы изменить/удалить объявление, нужно иметь роль ADMIN или быть владельцем этого объявления");
+            throw new AccessDeniedException("Чтобы изменить/удалить объявление, нужно быть владельцем этого объявления");
         }
     }
 
@@ -29,7 +29,7 @@ public class SecurityUtils {
         MyUserDetails userDetails = getUserDetailsFromContext();
 
         if (userDetails.getId() != comment.getAuthor().getId()) {
-            throw new AccessDeniedException("Чтобы изменить/удалить комментарий, нужно иметь роль ADMIN или быть владельцем этого комментария");
+            throw new AccessDeniedException("Чтобы изменить/удалить комментарий, нужно быть владельцем этого комментария");
         }
     }
 }

@@ -16,9 +16,6 @@ public interface UserMapper {
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
     String ADS_IMAGES = "/ads/images/";
 
-    @Mapping(target = "image", ignore = true)
-    User userDtoToEntity(UserDto dto);
-
     @Mapping(target = "image", source = "image", qualifiedByName = "imageMapping")
     UserDto entityToUserDto(User entity);
 
@@ -29,6 +26,9 @@ public interface UserMapper {
 
     @Named("imageMapping")
     default String imageMapping(Image value) {
+        if (value == null) {
+            return null;
+        }
         return ADS_IMAGES + value.getId();
     }
 

@@ -22,6 +22,7 @@ import ru.skypro.avito.service.UserService;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+import static ru.skypro.avito.mapper.AdsMapper.*;
 import static ru.skypro.avito.security.SecurityUtils.checkPermissionToAds;
 import static ru.skypro.avito.security.SecurityUtils.getUserIdFromContext;
 
@@ -38,19 +39,19 @@ public class AdsServiceImpl implements AdsService {
     @SneakyThrows
     @Override
     public AdsDto createAds(MultipartFile image, CreateAds dto) {
-        Ads ads = AdsMapper.INSTANCE.toEntity(dto);
+        Ads ads = INSTANCE.toEntity(dto);
         User user = userService.findUserFromContext();
         ads.setImage(imagesService.uploadImage(image));
         ads.setAuthor(user);
         log.info("Ads with id {} is created", ads.getId());
-        return AdsMapper.INSTANCE.toDto(adsRepository.save(ads));
+        return INSTANCE.toDto(adsRepository.save(ads));
     }
 
     @Transactional(readOnly = true)
     @Override
     public FullAdsDto getAdsById(Integer id) {
         log.info("Ads with id {} is founded", id);
-        return AdsMapper.INSTANCE.toFullAdsDto(findAdsById(id));
+        return INSTANCE.toFullAdsDto(findAdsById(id));
     }
 
     @Transactional(readOnly = true)
@@ -59,7 +60,7 @@ public class AdsServiceImpl implements AdsService {
         log.info("All ads is founded");
         return adsRepository.findAll()
                 .stream()
-                .map(AdsMapper.INSTANCE::toDto)
+                .map(INSTANCE::toDto)
                 .collect(Collectors.toList());
     }
 
@@ -79,7 +80,7 @@ public class AdsServiceImpl implements AdsService {
         ads.setPrice(createAds.getPrice());
         adsRepository.save(ads);
         log.info("Ads with id {} is updated", adsId);
-        return AdsMapper.INSTANCE.toDto(ads);
+        return INSTANCE.toDto(ads);
     }
 
     @Transactional(readOnly = true)
@@ -87,7 +88,7 @@ public class AdsServiceImpl implements AdsService {
     public Collection<AdsDto> getAdsMe() {
         log.info("My ads is founded");
         return adsRepository.findAllByAuthorId(getUserIdFromContext()).stream()
-                .map(AdsMapper.INSTANCE::toDto)
+                .map(INSTANCE::toDto)
                 .collect(Collectors.toList());
     }
 
@@ -97,7 +98,7 @@ public class AdsServiceImpl implements AdsService {
         checkPermissionToAds(ads);
         ads.setImage(image);
         log.info("Ads with id {} image is updated", ads.getId());
-        return AdsMapper.INSTANCE.toDto(adsRepository.save(ads));
+        return INSTANCE.toDto(adsRepository.save(ads));
     }
 
     public Ads findAdsById(Integer id) {
