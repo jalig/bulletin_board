@@ -4,10 +4,10 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.factory.Mappers;
-import ru.skypro.avito.dto.CreateAds;
-import ru.skypro.avito.model.Ads;
 import ru.skypro.avito.dto.AdsDto;
+import ru.skypro.avito.dto.CreateAds;
 import ru.skypro.avito.dto.FullAdsDto;
+import ru.skypro.avito.model.Ads;
 
 @Mapper
 public interface AdsMapper {

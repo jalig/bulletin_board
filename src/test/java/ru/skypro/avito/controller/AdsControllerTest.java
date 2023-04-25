@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.skypro.avito.dto.CreateAds;
 import ru.skypro.avito.dto.Role;
 import ru.skypro.avito.model.Ads;
-import ru.skypro.avito.model.Image;
 import ru.skypro.avito.model.User;
 import ru.skypro.avito.repository.AdsRepository;
 import ru.skypro.avito.repository.UserRepository;
@@ -37,7 +36,6 @@ public class AdsControllerTest {
     private final User user = new User();
     private final CreateAds createAds = new CreateAds();
     private final Ads ads = new Ads();
-    private final Image image = new Image();
     @Autowired
     private MockMvc mockMvc;
     @Autowired

@@ -7,9 +7,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
-import org.webjars.NotFoundException;
-import ru.skypro.avito.model.User;
 import ru.skypro.avito.dto.UserDto;
+import ru.skypro.avito.model.User;
 import ru.skypro.avito.repository.UserRepository;
 import ru.skypro.avito.security.UserDetailsServiceImpl;
 import ru.skypro.avito.service.ImageService;
@@ -61,8 +60,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findUserFromContext() {
-        return userRepository.findById(getUserDetailsFromContext().getId())
-                .orElseThrow(() -> new NotFoundException("User from id " + getUserDetailsFromContext().getId() + " not found"));
+        return getUserDetailsFromContext().getUser();
     }
 
 }

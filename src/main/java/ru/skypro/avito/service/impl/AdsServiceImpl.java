@@ -10,7 +10,6 @@ import org.webjars.NotFoundException;
 import ru.skypro.avito.dto.AdsDto;
 import ru.skypro.avito.dto.CreateAds;
 import ru.skypro.avito.dto.FullAdsDto;
-import ru.skypro.avito.mapper.AdsMapper;
 import ru.skypro.avito.model.Ads;
 import ru.skypro.avito.model.Image;
 import ru.skypro.avito.model.User;
@@ -22,7 +21,7 @@ import ru.skypro.avito.service.UserService;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-import static ru.skypro.avito.mapper.AdsMapper.*;
+import static ru.skypro.avito.mapper.AdsMapper.INSTANCE;
 import static ru.skypro.avito.security.SecurityUtils.checkPermissionToAds;
 import static ru.skypro.avito.security.SecurityUtils.getUserIdFromContext;
 

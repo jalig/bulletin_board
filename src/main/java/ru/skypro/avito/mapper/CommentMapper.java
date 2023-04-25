@@ -4,9 +4,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.factory.Mappers;
-import ru.skypro.avito.model.Image;
 import ru.skypro.avito.dto.CommentDto;
 import ru.skypro.avito.model.Comment;
+import ru.skypro.avito.model.Image;
 
 @Mapper
 public interface CommentMapper {

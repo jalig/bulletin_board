@@ -4,10 +4,10 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.factory.Mappers;
-import ru.skypro.avito.model.Image;
-import ru.skypro.avito.model.User;
 import ru.skypro.avito.dto.RegisterReq;
 import ru.skypro.avito.dto.UserDto;
+import ru.skypro.avito.model.Image;
+import ru.skypro.avito.model.User;
 
 @Mapper
 public interface UserMapper {

@@ -6,9 +6,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.skypro.avito.service.CommentService;
 import ru.skypro.avito.dto.CommentDto;
 import ru.skypro.avito.dto.ResponseWrapper;
+import ru.skypro.avito.service.CommentService;
 
 import javax.validation.Valid;
 

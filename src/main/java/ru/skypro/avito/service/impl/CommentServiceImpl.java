@@ -15,7 +15,7 @@ import java.time.Instant;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-import static ru.skypro.avito.mapper.CommentMapper.*;
+import static ru.skypro.avito.mapper.CommentMapper.INSTANCE;
 import static ru.skypro.avito.security.SecurityUtils.checkPermissionToAdsComment;
 
 @RequiredArgsConstructor

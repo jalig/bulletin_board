@@ -1,11 +1,11 @@
 package ru.skypro.avito.service;
 
 import org.springframework.web.multipart.MultipartFile;
-import ru.skypro.avito.model.Image;
 import ru.skypro.avito.dto.AdsDto;
 import ru.skypro.avito.dto.CreateAds;
 import ru.skypro.avito.dto.FullAdsDto;
 import ru.skypro.avito.model.Ads;
+import ru.skypro.avito.model.Image;
 
 import java.util.Collection;
 
