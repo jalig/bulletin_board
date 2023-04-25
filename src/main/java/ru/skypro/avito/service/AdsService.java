@@ -11,14 +11,21 @@ import java.util.Collection;
 
 public interface AdsService {
     AdsDto createAds(MultipartFile image, CreateAds dto);
+
     FullAdsDto getAdsById(Integer id);
+
     Collection<AdsDto> getAllAds();
+
     void removeAdsById(Integer id);
+
     AdsDto updateAds(CreateAds updatedAds, Integer adsId);
+
     Collection<AdsDto> getAdsMe();
+
     AdsDto updateAdsImage(Ads ads, Image image);
+
     /**
-     *Обслуживающий метод для получения Entity обьявления
+     * Обслуживающий метод для получения Entity обьявления
      */
     Ads findAdsById(Integer id);
 }

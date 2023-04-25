@@ -21,7 +21,7 @@ public class ImageServiceImpl implements ImageService {
 
     @Override
     @SneakyThrows
-    public Image uploadImage(MultipartFile imageFile){
+    public Image uploadImage(MultipartFile imageFile) {
         Image image = new Image();
         image.setImage(imageFile.getBytes());
         image.setFileSize(imageFile.getSize());

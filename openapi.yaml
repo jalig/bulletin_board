@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  contact: {}
+  contact: { }
   description: Api Documentation
   license:
     name: Apache 2.0
@@ -29,13 +29,13 @@ paths:
                 $ref: '#/components/schemas/ResponseWrapper«Ads»'
           description: OK
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
         '404':
-          content: {}
+          content: { }
           description: Not Found
       summary: getALLAds
       tags:
@@ -66,16 +66,16 @@ paths:
                 $ref: '#/components/schemas/Ads'
           description: OK
         '201':
-          content: {}
+          content: { }
           description: Created
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
         '404':
-          content: {}
+          content: { }
           description: Not Found
       summary: addAds
       tags:
@@ -115,13 +115,13 @@ paths:
                 $ref: '#/components/schemas/ResponseWrapper«Ads»'
           description: OK
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
         '404':
-          content: {}
+          content: { }
           description: Not Found
       summary: getAdsMe
       tags:
@@ -145,13 +145,13 @@ paths:
                 $ref: '#/components/schemas/ResponseWrapper«AdsComment»'
           description: OK
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
         '404':
-          content: {}
+          content: { }
           description: Not Found
       summary: getAdsComments
       tags:
@@ -181,16 +181,16 @@ paths:
                 $ref: '#/components/schemas/AdsComment'
           description: OK
         '201':
-          content: {}
+          content: { }
           description: Created
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
         '404':
-          content: {}
+          content: { }
           description: Not Found
       summary: addAdsComments
       tags:
@@ -217,13 +217,13 @@ paths:
             type: integer
       responses:
         '204':
-          content: {}
+          content: { }
           description: No Content
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
       summary: deleteAdsComment
       tags:
@@ -253,13 +253,13 @@ paths:
                 $ref: '#/components/schemas/AdsComment'
           description: OK
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
         '404':
-          content: {}
+          content: { }
           description: Not Found
       summary: getAdsComment
       tags:
@@ -296,13 +296,13 @@ paths:
                 $ref: '#/components/schemas/AdsComment'
           description: OK
         '204':
-          content: {}
+          content: { }
           description: No Content
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
       summary: updateAdsComment
       tags:
@@ -323,13 +323,13 @@ paths:
             type: integer
       responses:
         '204':
-          content: {}
+          content: { }
           description: No Content
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
       summary: removeAds
       tags:
@@ -353,13 +353,13 @@ paths:
                 $ref: '#/components/schemas/FullAds'
           description: OK
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
         '404':
-          content: {}
+          content: { }
           description: Not Found
       summary: getAds
       tags:
@@ -390,13 +390,13 @@ paths:
                 $ref: '#/components/schemas/Ads'
           description: OK
         '204':
-          content: {}
+          content: { }
           description: No Content
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
       summary: updateAds
       tags:
@@ -422,16 +422,16 @@ paths:
                 type: object
           description: OK
         '201':
-          content: {}
+          content: { }
           description: Created
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
         '404':
-          content: {}
+          content: { }
           description: Not Found
       summary: login
       tags:
@@ -457,16 +457,16 @@ paths:
                 type: object
           description: OK
         '201':
-          content: {}
+          content: { }
           description: Created
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
         '404':
-          content: {}
+          content: { }
           description: Not Found
       summary: register
       tags:
@@ -485,13 +485,13 @@ paths:
                 $ref: '#/components/schemas/ResponseWrapper«User»'
           description: OK
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
         '404':
-          content: {}
+          content: { }
           description: Not Found
       summary: getUsers
       tags:
@@ -514,13 +514,13 @@ paths:
                 $ref: '#/components/schemas/User'
           description: OK
         '204':
-          content: {}
+          content: { }
           description: No Content
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
       summary: updateUser
       tags:
@@ -546,16 +546,16 @@ paths:
                 $ref: '#/components/schemas/NewPassword'
           description: OK
         '201':
-          content: {}
+          content: { }
           description: Created
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
         '404':
-          content: {}
+          content: { }
           description: Not Found
       summary: setPassword
       tags:
@@ -582,13 +582,13 @@ paths:
                 $ref: '#/components/schemas/User'
           description: OK
         '401':
-          content: {}
+          content: { }
           description: Unauthorized
         '403':
-          content: {}
+          content: { }
           description: Forbidden
         '404':
-          content: {}
+          content: { }
           description: Not Found
       summary: getUser
       tags:

@@ -5,7 +5,7 @@
 CREATE TABLE IF NOT EXISTS image
 (
     id         SERIAL PRIMARY KEY,
-    image      BYTEA   NOT NULL,
+    image      BYTEA  NOT NULL,
     file_size  BIGINT NOT NULL,
     media_type TEXT
 );

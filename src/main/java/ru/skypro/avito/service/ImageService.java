@@ -13,6 +13,7 @@ public interface ImageService {
      */
     @SneakyThrows
     Image uploadImage(MultipartFile imageFile);
+
     /**
      * Получение картинки из БД
      */
